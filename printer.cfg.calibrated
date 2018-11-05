@@ -9,12 +9,12 @@ dir_pin: ar55
 enable_pin: !ar38
 step_distance: .01
 endstop_pin: ^ar2
-homing_speed: 60
+homing_speed: 30
 # The next parameter needs to be adjusted for
 # your printer. You may want to start with 280
 # and meassure the distance from nozzle to bed.
 # This value then needs to be added.
-#position_endstop: 380
+#position_endstop: 375
 
 [stepper_b]
 step_pin: ar60
@@ -41,7 +41,7 @@ step_distance: 0.0025
 nozzle_diameter: 0.400
 filament_diameter: 1.750
 heater_pin: ar10
-sensor_type: ATC Semitec 104GT-2
+sensor_type: NTC 100K beta 3950
 sensor_pin: analog13
 #control: pid
 #pid_Kp: 25.349
@@ -90,51 +90,58 @@ y_offset: 0.0
 z_offset: 0.8
 speed: 5.0
 
+[gcode_macro UNLOAD]
+gcode:
+	M83
+	G1 E50 F300
+	G1 E-50 F3000
+	M82
+
 #*# <---------------------- SAVE_CONFIG ---------------------->
 #*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 #*#
-#*# [printer]
-#*# delta_radius = 140.849272
-#*#
-#*# [stepper_a]
-#*# angle = 210.880370
-#*# arm_length = 280.000000
-#*# position_endstop = 374.404680
-#*#
-#*# [stepper_b]
-#*# angle = 330.454158
-#*# arm_length = 280.000000
-#*# position_endstop = 375.330322
-#*#
-#*# [stepper_c]
-#*# angle = 90.000000
-#*# arm_length = 280.000000
-#*# position_endstop = 374.179283
-#*#
-#*# [delta_calibrate]
-#*# height0 = 0.8
-#*# height0_pos = 37393.000,37454.000,37296.000
-#*# height1 = 0.8
-#*# height1_pos = 44562.000,44587.000,33648.000
-#*# height2 = 0.8
-#*# height2_pos = 36756.000,48961.000,36619.000
-#*# height3 = 0.8
-#*# height3_pos = 33826.000,43268.000,43130.000
-#*# height4 = 0.8
-#*# height4_pos = 36399.000,36477.000,44870.000
-#*# height5 = 0.8
-#*# height5_pos = 42135.000,34094.000,42079.000
-#*# height6 = 0.8
-#*# height6_pos = 46746.000,36607.000,36435.000
-#*#
 #*# [extruder]
 #*# control = pid
-#*# pid_kp = 21.235
-#*# pid_ki = 1.072
-#*# pid_kd = 105.115
+#*# pid_kp = 24.858
+#*# pid_ki = 1.691
+#*# pid_kd = 91.352
 #*#
 #*# [heater_bed]
 #*# control = pid
 #*# pid_kp = 61.554
 #*# pid_ki = 1.597
 #*# pid_kd = 593.225
+#*#
+#*# [printer]
+#*# delta_radius = 141.245159
+#*#
+#*# [stepper_a]
+#*# angle = 210.920305
+#*# arm_length = 280.000000
+#*# position_endstop = 377.595892
+#*#
+#*# [stepper_b]
+#*# angle = 330.365077
+#*# arm_length = 280.000000
+#*# position_endstop = 378.372081
+#*#
+#*# [stepper_c]
+#*# angle = 90.000000
+#*# arm_length = 280.000000
+#*# position_endstop = 376.622265
+#*#
+#*# [delta_calibrate]
+#*# height0 = 0.0
+#*# height0_pos = 37750.000,37750.000,37750.000
+#*# height1 = 0.0
+#*# height1_pos = 44593.000,44593.000,33990.000
+#*# height2 = 0.0
+#*# height2_pos = 37008.000,48960.000,37008.000
+#*# height3 = 0.0
+#*# height3_pos = 34218.000,43488.000,43488.000
+#*# height4 = 0.0
+#*# height4_pos = 36819.000,36819.000,45219.000
+#*# height5 = 0.0
+#*# height5_pos = 42489.000,34459.000,42489.000
+#*# height6 = 0.0
+#*# height6_pos = 46891.000,36854.000,36854.000

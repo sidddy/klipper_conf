@@ -97,14 +97,18 @@ gcode:
 	G1 E-50 F3000
 	M82
 
+[gcode_macro QQ_INIT]
+gcode:
+	SET_GCODE_OFFSET X=0 Y=0 Z=0.7
+
 #*# <---------------------- SAVE_CONFIG ---------------------->
 #*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 #*#
 #*# [extruder]
 #*# control = pid
-#*# pid_kp = 24.858
-#*# pid_ki = 1.691
-#*# pid_kd = 91.352
+#*# pid_kp = 25.824
+#*# pid_ki = 1.524
+#*# pid_kd = 109.428
 #*#
 #*# [heater_bed]
 #*# control = pid
